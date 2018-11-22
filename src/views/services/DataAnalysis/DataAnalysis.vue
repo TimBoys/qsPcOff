@@ -13,16 +13,20 @@
 			</div>
 			<div class="navContBox"></div>
 		</div>
-		<div class="boxShadeCont" ref="boxShadeCont1">
+		<div class="boxShadeCont" >
 			<x-img class="carouselImg" v-lazy="pcHome[1]" /></x-img>
 			<div class="shadeBox" ></div>
 		</div>
-		<div class="boxShadeCont">
+		<div class="boxShadeCont" ref="boxScroll">
 			<x-img class="carouselImg" v-lazy="pcHome[2]" /></x-img>
 			<div class="shadeBox" ></div>
-		</div>		
-		<div class="worksCont canClickPoint">
-			<x-img class="carouselImg" v-lazy="pcHome[3]" />
+		</div>	
+		<div class="boxShadeCont">
+			<x-img class="carouselImg" v-lazy="pcHome[3]" /></x-img>
+			<div class="shadeBox" ></div>
+		</div>	
+		<div class="worksCont canClickPoint" >
+			<x-img class="carouselImg" v-lazy="pcHome[4]" />
 				<section>
 					<div @click="open('/pcHome')"></div>
 					<div @click="open('/Hotel')"></div>
@@ -38,25 +42,36 @@
 
 <script>
 	import { XImg, Flexbox, FlexboxItem, Actionsheet } from 'vux';
-	import applyJoin from '../../components/apply-join.vue';
+	import applyJoin from '../../../components/apply-join.vue';
+	import VueDB from '../../../util/vue-db/vue-db-long'
+	var DB = new VueDB();	
 	export default{
 		name:"Hotel",
 		data(){
 			return{
 				//首页图片地址
 				pcHome:[
-					"../../../static/images/service/service1.png",
-					"../../../static/images/service/service2.png",
-					"../../../static/images/service/service3.png",
-					"../../../static/images/service/service4.png",
-					"../../../static/images/home/pcHome8.png",					
+					"../../../../static/images/service/service1.png",
+					"../../../../static/images/service/service2.png",
+					"../../../../static/images/service/service3.png",
+					"../../../../static/images/service/service33.png",
+					"../../../../static/images/service/service4.png",
+					"../../../../static/images/home/pcHome8.png",					
 				],
 				closeOldPc:false, //以前旧的模板内容	
 				fullPath:"", //滚动到页面哪部分
 			}
 		},
 		mounted:function(){
-			window.scrollTo(0,0);
+			setTimeout(()=>{
+				var daTop = this.$refs.boxScroll.getBoundingClientRect().top;
+				if (daTop) {
+					DB.setItem("daTop", daTop);					
+				} else{
+				    daTop = DB.getItem("daTop").toString();	
+				}
+				window.scrollTo(0,daTop);
+			},100)
 		},
 		components:{
 			XImg,

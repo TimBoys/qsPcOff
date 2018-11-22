@@ -39,21 +39,21 @@
 
       </div>
       
- <!--new pcHome-->
+ <!--new pcHome--> 
 <!--导航模块-->
 		<div class="navCont">
 			<img class="carouselImg" :src="showNavImg" /></img>
 			<div class="navItem">
-				<span :class="{'active' : isActive('pcHome')}"><a @click="open('/pcHome')">HOME</a></span>
+				<span :class="{'active' : isActive('Home')}"><a @click="open('/Home')">HOME</a></span>
 				<span @mouseenter="clickNavSer" @mouseleave="mouseLeaveSer" :class="{'active' : isServices}">
 					<a class="serCont">
 					<span @click="clickNavSer" class="flagSer">SERVICES</span>
 					<div class="itemContSer" >
 						<div @click="open('/weChat')">WeChat Applet</div>
-						<div @click="open('/Services')">Web Design</div>
-						<div @click="open('/Services')">App ISO/Android</div>
-						<div @click="open('/Services')">Marketing & Branding</div>
-						<div @click="open('/Services')">Data Analysis</div>						
+						<div @click="open('/WebDesign')">Web Design</div>
+						<div @click="open('/IOSAndroid')">App ISO/Android</div>
+						<div @click="open('/MarketingBranding')">Marketing & Branding</div>
+						<div @click="open('/DataAnalysis')">Data Analysis</div>						
 					</div>					
 					</a>
 				</span>
@@ -64,13 +64,13 @@
 							<div @click="open('/Hotel')">Hotel</div>
 							<div @click="open('/Education')">Education</div>
 							<div @click="open('/Catering')">Restaurant</div>
-							<div @click="open('/AutoService')">Auto Service</div>
+							<div @click="open('/CarDealerships')">Car Dealerships</div>
 							<div @click="open('/Tourism')">Tourism</div>
 							<div @click="open('/Retail')">Retail</div>
 							<div @click="open('/Fintness')">Fitness</div>
 							<div @click="open('/RealEstate')">Real Estate</div>
-							<div @click="open('/BeautySpa')">Beauty & Spa</div>
-							<div @click="open('/EnterTai')">Entertainment</div>					
+							<div @click="open('/BeautySpa')">Beauty & Spas</div>
+							<!--<div @click="open('/EnterTai')">Entertainment</div>-->					
 						</div>							
 					</a>
 				</span>
@@ -125,7 +125,7 @@ export default {
   watch:{
   	"$route"(to,from){
   			this.nowUrl = to.fullPath;
-  			console.log(to.fullPath)
+//			console.log(to.fullPath)
   			this.changeImg(to.fullPath);
 //			console.dir(this.$refs.divCollapse.classList)
   			if (this.$refs.divCollapse.classList[this.$refs.divCollapse.classList.length -1] == "in") {
@@ -179,15 +179,18 @@ export default {
 			},
 			//切换路由更改图片格式
 			changeImg(links){
-				console.log(links)
+//				console.log(links)
 				this.isServices = false;
 				this.isWorks = false;
-				if(links == "/pcHome"){
+				if(links == "/Home"){
 					this.showNavImg = this.pcHome;
 				}else if(links == "/weChat"){
 					this.showNavImg = this.weChat;
 					this.isServices = true;
 				}else if(links == "/Services"){
+					this.showNavImg = this.Services;
+					this.isServices = true;
+				}else if(links == "/WebDesign" || links == "/IOSAndroid" || links == "/MarketingBranding" || links == "/DataAnalysis"){
 					this.showNavImg = this.Services;
 					this.isServices = true;
 				}else if(links == "/Hotel"){
@@ -196,10 +199,10 @@ export default {
 				}else if(links == "/Education"){
 					this.showNavImg = this.Education;
 					this.isWorks = true;
-				}else if(links == "/Catering"){
+				}else if(links == "/Restaurant"){
 					this.showNavImg = this.Catering;
 					this.isWorks = true;
-				}else if(links == "/AutoService"){
+				}else if(links == "/CarDealerships"){
 					this.showNavImg = this.AutoService;
 					this.isWorks = true;
 				}else if(links == "/Tourism"){

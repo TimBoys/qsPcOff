@@ -20,7 +20,7 @@
 		<div class="worksCont canClickPoint">
 			<x-img class="carouselImg" v-lazy="pcHome[2]" />
 				<section>
-					<div @click="open('/AutoService')"></div>
+					<div @click="open('/CarDealerships')"></div>
 					<div @click="open('/Retail')"></div>
 				</section>				
 			</x-img>

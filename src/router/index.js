@@ -8,15 +8,25 @@ Router.prototype.openPage = function(link,query){
 //	console.log(query)
 	this.push({
 		path:link,
+//		query:_.assignIn({
+//			time:new Date().getTime()
+//		},query || {})		
 	})
 }
 
 Vue.use(Router)
 
 export default new Router({
+//	  scrollBehavior (to, from, savedPosition) {
+//	    if (savedPosition) {
+//	      return savedPosition
+//	    } else {
+//	      return { x: 0, y: 0 }
+//	    }
+//	  },	
 	routes: [{
 			path: '/',
-			redirect: '/pcHome'
+			redirect: '/Home'
 		},
 		{
 			path: '/test',
@@ -24,8 +34,8 @@ export default new Router({
 			component: test
 		},
 		{
-			path: '/pcHome',
-			name: 'pcHome',
+			path: '/Home',
+			name: 'Home',
 		    component(resolve){
 		       require(['@/views/pcHome/pcHome.vue'], resolve)
 		    }
@@ -50,6 +60,34 @@ export default new Router({
 		    component(resolve){
 		       require(['@/views/services/services.vue'], resolve)
 		    }
+		},
+		{
+			path: '/WebDesign',
+			name: 'WebDesign',
+		    component(resolve){
+		       require(['@/views/services/WebDesign/WebDesign.vue'], resolve)
+		    }
+		},		
+		{
+			path: '/IOSAndroid',
+			name: 'IOSAndroid',
+		    component(resolve){
+		       require(['@/views/services/IOSAndroid/IOSAndroid.vue'], resolve)
+		    }
+		},		
+		{
+			path: '/MarketingBranding',
+			name: 'MarketingBranding',
+		    component(resolve){
+		       require(['@/views/services/MarketingBranding/MarketingBranding.vue'], resolve)
+		    }
+		},
+		{
+			path: '/DataAnalysis',
+			name: 'DataAnalysis',
+		    component(resolve){
+		       require(['@/views/services/DataAnalysis/DataAnalysis.vue'], resolve)
+		    }
 		},		
 		{
 			path: '/Hotel',
@@ -67,14 +105,14 @@ export default new Router({
 		    }
 		},
 		{
-			path: '/Catering',
+			path: '/Restaurant',
 			name: 'Catering',
 		    component(resolve){
 		       require(['@/views/Works/Catering/Catering.vue'], resolve)
 		    }
 		},	
 		{
-			path: '/AutoService',
+			path: '/CarDealerships',
 			name: 'AutoService',
 		    component(resolve){
 		       require(['@/views/Works/AutoService/AutoService.vue'], resolve)

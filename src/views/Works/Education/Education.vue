@@ -21,7 +21,7 @@
 			<x-img class="carouselImg" v-lazy="pcHome[2]" />
 				<section>
 					<div @click="open('/Hotel')"></div>
-					<div @click="open('/Catering')"></div>
+					<div @click="open('/Restaurant')"></div>
 				</section>				
 			</x-img>
 		</div>	

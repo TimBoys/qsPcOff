@@ -29,7 +29,7 @@
 			<x-img class="carouselImg" v-lazy="pcHome[4]" /></x-img>
 			<div class="shadeBox" ></div>
 		</div>	
-		<div class="worksCont">
+		<div class="worksCont canClickPoint">
 			<x-img class="carouselImg" v-lazy="pcHome[5]" />
 				<section>
 					<div @click="open('/Services')"></div>

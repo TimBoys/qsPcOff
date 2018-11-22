@@ -9,7 +9,7 @@
 				<span ><a href="#/Services" >SERVICES</a></span>
 				<span class="active"><a href="#/Hotel" >WORKS</a></span>
 				<span><a href="#/RealEstate" >ABOUT</a></span>
-				<span><a @click="EnterTai" >CONTACT</a></span>
+				<span><a @click="open('/EnterTai')">CONTACT</a></span>
 			</div>
 			<div class="navContBox"></div>
 		</div>
@@ -21,7 +21,7 @@
 			<x-img class="carouselImg" v-lazy="pcHome[2]" />
 				<section>
 					<div @click="open('/RealEstate')"></div>
-					<div @click="open('/EnterTai')"></div>
+					<div @click="open('/About')"></div>
 				</section>				
 			</x-img>
 		</div>		

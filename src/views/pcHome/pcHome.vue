@@ -23,13 +23,13 @@
 						<div class="itemContWorks" >
 							<div @click="open('/Hotel')">Hotel</div>
 							<div @click="open('/Education')">Education</div>
-							<div @click="open('/Catering')">Restaurant</div>
-							<div @click="open('/AutoService')">Auto Service</div>
+							<div @click="open('/Restaurant')">Restaurant</div>
+							<div @click="open('/CarDealerships')">Car Dealerships</div>
 							<div @click="open('/Tourism')">Tourism</div>
 							<div @click="open('/Retail')">Retail</div>
 							<div @click="open('/Fintness')">Fitness</div>
 							<div @click="open('/RealEstate')">Real Estate</div>
-							<div @click="open('/BeautySpa')">Beauty & Spa</div>
+							<div @click="open('/BeautySpa')">Beauty & Spas</div>
 							<div @click="open('/EnterTai')">Entertainment</div>					
 							
 						</div>							
@@ -51,26 +51,29 @@
 			<x-img class="carouselImg" v-lazy="pcHome[2]" /></x-img>
 			<div class="shadeBox"></div>
 		</div>		
-		<div class="worksCont canClickPoint">
+		<!--<div class="worksCont canClickPoint">
 			<x-img class="carouselImg" v-lazy="pcHome[3]" />
 				<section>
 					<div @click="open('/Hotel')"></div>
 					<div @click="open('/Education')"></div>
-					<div @click="open('/Catering')"></div>
+					<div @click="open('/Restaurant')"></div>
 					<div @click="open('/AutoService')"></div>
 				</section>
 			</x-img>
-
-		</div>
+		</div>-->
 		<div class="worksCont2 canClickPoint">
-			<x-img class="carouselImg" v-lazy="pcHome[4]" />
+			<x-img class="carouselImg" v-lazy="pcHome[3]" />
 				<section>
+					<div @click="open('/Hotel')"></div>
+					<div @click="open('/Education')"></div>
+					<div @click="open('/Restaurant')"></div>
+					<div @click="open('/CarDealerships')"></div>					
 					<div @click="open('/Tourism')"></div>
 					<div @click="open('/Retail')"></div>
 					<div @click="open('/Fintness')"></div>
 					<div @click="open('/RealEstate')"></div>
 					<div @click="open('/BeautySpa')"></div>
-					<div @click="open('/EnterTai')"></div>					
+					<!--<div @click="open('/EnterTai')"></div>-->					
 				</section>			
 			</x-img>
 		</div>		
@@ -359,7 +362,7 @@
 			}
 		},
 		mounted: function() {
-
+console.log("Home")
 			window.scrollTo(0,0);
 		   document.addEventListener('click', (e) => {
 //		   	console.dir(e.target.className)
@@ -713,7 +716,7 @@
 					/*border: 1px solid;
 					background-color: red;*/
 					width: calc(100% / 3);
-					height: 50%;
+					height: calc(100% / 3);
 				}
 			}
 		}		

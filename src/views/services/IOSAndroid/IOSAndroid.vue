@@ -20,9 +20,13 @@
 		<div class="boxShadeCont">
 			<x-img class="carouselImg" v-lazy="pcHome[2]" /></x-img>
 			<div class="shadeBox" ></div>
-		</div>		
+		</div>	
+		<div class="boxShadeCont">
+			<x-img class="carouselImg" v-lazy="pcHome[3]" /></x-img>
+			<div class="shadeBox" ></div>
+		</div>	
 		<div class="worksCont canClickPoint">
-			<x-img class="carouselImg" v-lazy="pcHome[3]" />
+			<x-img class="carouselImg" v-lazy="pcHome[4]" />
 				<section>
 					<div @click="open('/pcHome')"></div>
 					<div @click="open('/Hotel')"></div>
@@ -38,18 +42,19 @@
 
 <script>
 	import { XImg, Flexbox, FlexboxItem, Actionsheet } from 'vux';
-	import applyJoin from '../../components/apply-join.vue';
+	import applyJoin from '../../../components/apply-join.vue';
 	export default{
 		name:"Hotel",
 		data(){
 			return{
 				//首页图片地址
 				pcHome:[
-					"../../../static/images/service/service1.png",
-					"../../../static/images/service/service2.png",
-					"../../../static/images/service/service3.png",
-					"../../../static/images/service/service4.png",
-					"../../../static/images/home/pcHome8.png",					
+					"../../../../static/images/service/service1.png",
+					"../../../../static/images/service/service2.png",
+					"../../../../static/images/service/service3.png",
+					"../../../../static/images/service/service33.png",
+					"../../../../static/images/service/service4.png",
+					"../../../../static/images/home/pcHome8.png",					
 				],
 				closeOldPc:false, //以前旧的模板内容	
 				fullPath:"", //滚动到页面哪部分
@@ -63,21 +68,6 @@
 			applyJoin
 		},
 		methods:{
-			scrollPage(fullPath){
-				console.log("1222")
-				console.log(fullPath)
-				if(fullPath == "/WebDesign"){
-					console.log(this.$refs.boxShadeCont)
-					this.$refs.boxShadeCont.scrollTop = 0;
-				}else if(fullPath == "/MarketingBranding"){
-					
-				}else if(fullPath == "/DataAnalysis"){
-					
-				}else{
-					window.scrollTo(0,0);
-				}
-				
-			},
 			//跳转路由，切换页面
 			open(link){
 				this.$router.openPage(link);

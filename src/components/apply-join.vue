@@ -15,7 +15,7 @@
 				      	<x-input title="" v-model="submitData.email" class="ajInput" ></x-input>
 				    </group>					
 				    <group class="ajcGroup">
-				    	<group-title slot="title" title-color="#FFF" class="ajGTitle">phone</group-title>
+				    	<group-title slot="title" title-color="#FFF" class="ajGTitle">Phone</group-title>
 				      	<x-input title="" v-model="submitData.telephone" class="ajInput" ></x-input>
 				    </group>					
 				    <group class="ajcGroup">
@@ -29,21 +29,21 @@
 			<div class="bottomLink">
 				<div class="leftCont">
 					<div @click="open('/weChat')"></div>
-					<div @click="open('/Services')"></div>
+					<div @click="open('/Services')" class="cancatColumn"></div>
 				</div>
 				<div class="rightCont">
 					<div @click="open('/Hotel')"></div>
 					<div @click="open('/Education')"></div>
-					<div @click="open('/Catering')"></div>
-					<div @click="open('/AutoService')"></div>
+					<div @click="open('/Restaurant')"></div>
+					<div @click="open('/CarDealerships')"></div>
 					<div @click="open('/Tourism')"></div>
+				</div>			
+				<div class="rightCont2">
 					<div @click="open('/Retail')"></div>
 					<div @click="open('/Fintness')"></div>
 					<div @click="open('/RealEstate')"></div>
-					<div @click="open('/BeautySpa')"></div>
-					<div @click="open('/EnterTai')"></div>
-				</div>			
-			
+					<div @click="open('/BeautySpas')"></div>
+				</div>				
 			</div>
 			
 		</div>	
@@ -242,19 +242,22 @@
 				/*background-color: blue;*/	
 				/*border: 1px solid;*/
 				.leftCont{
-					width:40%;
+					width:30%;
 					padding-top:11%;
 					div{
 						width: 100%;
 						height: 7%;
 						/*border: 1px solid blue;*/
+						&:hover{
+							cursor: pointer;
+						}
 					}
-					&:hover{
-						cursor: pointer;
+					.cancatColumn{
+						height: 35%;
 					}
 				}
 				.rightCont{
-					width: 40%;
+					width: 30%;
 					padding-top:11%;
 					div{
 						width:100%;
@@ -265,60 +268,20 @@
 						}
 					}					
 				}
+				.rightCont2{
+					width: 30%;
+					padding-top:11%;
+					div{
+						width:100%;
+						height: 7%;
+						/*border: 1px solid blue;*/	
+						&:hover{
+						cursor: pointer;
+						}
+					}					
+				}				
+				
 			}
-			
-			/*.applyJoin{
-				z-index: 99;
-				width: 100%;
-				height: 65%;
-				display: flex;
-				flex-wrap: wrap;
-				position: absolute;
-				top: 34%;
-				.applyJoinCont{
-					font-size: 50%;
-					width: 50%;
-					height:100%;
-					padding:0 5% 0 10%;
-					border:1px solid;
-					.ajcGroup{
-						height: auto;
-					}
-					.ajGTitle{
-						color: #FFF;
-						padding-left: 0;
-						margin-top: 2%;
-						font-size: 80%;
-					}					
-					.ajInput{
-						outline: none;
-						border: 1px solid;
-						width: 100%;
-						height:90%;
-						font-size: 20%;
-						padding: 0;
-					}
-					.ajTextarea{
-						outline: none;
-						border: 1px solid;
-						width: 100%;
-						height:150%;
-						font-size: 5%;
-						padding: 0;						
-					}
-					.ajButton{
-						padding: 0;
-						border: 1px solid transparent;  
-						outline: none; 					
-						width: 100%;
-						margin-top: 0.15rem;
-						height: 0.4rem;
-						font-size: 5%;
-						color: #FFF;
-						background:linear-gradient(to right,rgb(0,159,196),rgb(0,200,156))
-					}					
-				}
-			}*/
 			
 			/*手机端*/
 			.applyJoin{
@@ -341,7 +304,8 @@
 						color: #FFF;
 						padding-left: 0;
 						margin-top: 0.1rem;
-						font-size: 0.16rem;
+						margin-bottom: 0rem;
+						font-size: 0.1rem;
 					}					
 					.ajInput{
 						height: 0.2rem;
